@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Товары{% endblock %}
+
+{% block content %}
+<body>
+    <header>
+        <div class="container">
+            <h1>Спиок товаров</h1>
+        </div>
+    </header>
+        <section id="home">
+            <div class="container">
+
+                <main>
+                    <!-- выводим на экран список товаров с картинками и ценой -->
+                        {% for item in product_list %} 
+                            
+                            <div class="center-image"> 
+                                <img  src= "{{item.image.url}}" alt={{item.name}} width="150" >
+                            </div>   
+
+                            <p>{{item.name}}</p> 
+                            <p>{{item.price|floatformat:2 }} руб.</p> 
+                            <span> <a href="{% url 'product_detail' pk=item.id %}"> подробнее</a> </span> 
+                       
+                        {% empty %}
+                            <p>Список товаров пуст</p> 
+                        
+
+                        {% endfor %}
+                </main>
+            </div>
+        </section>
+</body>
+ {% endblock %}

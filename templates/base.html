@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Главная страница{% endblock %}</title>
+
+    <link rel="stylesheet" href="{% static 'style/styles.css'%}" type="text/css" >
+    <link rel="icon" href = "{% static 'favicon_io/favicon-16x16.png'%}" type='href="image/png'>
+    <link rel="icon" href = "{% static 'favicon_io/favicon-32x32.png'%}" type='href="image/png'>
+
+ </head>
+
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 DiShato. Все права защищены.</p>
+        </div>
+    </footer>
+</html>

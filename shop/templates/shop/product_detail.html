@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}{{object.name}}{% endblock %}
+
+{% block content %}
+     <body>
+
+        <header>
+            <div class="container">
+            <h1>{{object.name}}</h1>
+            </div>
+        </header>
+
+        <section id="home">
+            <div class="container">     
+
+                {% if object %}
+                
+                <!-- Выводим на экран необходимую информацию о продукте -->
+                    <img  src= "{{product.image.url}}"" alt="фото" width="150" >
+                    <p>{{object.name}}</p>
+                    <p>{{object.price|floatformat:2}}</p>
+                    <p>{{object.description}}</p>
+
+                {% else %}   
+                    <p>Товар не найден</p> 
+
+                {% endif %}
+                
+              
+            </div>
+        </section>
+     </body>
+ {% endblock %}

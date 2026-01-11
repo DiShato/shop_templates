@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+     <body>
+        <header>
+            <div class="container">
+                <h1>Добро пожаловать в магазин!</h1>
+            </div>
+        </header>
+        <section id="home">
+            <div class="container">
+                    <span> <a href="{% url 'product_list' %}">Посмотреть список товаров</a> </span>
+            </div>
+        </section>
+     </body>
+{% endblock %}
